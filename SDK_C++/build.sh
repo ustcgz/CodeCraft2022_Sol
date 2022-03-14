@@ -25,7 +25,7 @@ rm -fr build
 mkdir build
 cd build
 
-cmake ../CodeCraft-2022/src
+cmake ../CodeCraft-2022/
 tmp=$?
 echo "cmake compile return:" ${tmp}
 if [ ${tmp} -ne 0 ]
