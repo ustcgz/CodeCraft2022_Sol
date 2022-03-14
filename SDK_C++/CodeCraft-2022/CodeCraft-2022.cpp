@@ -3,8 +3,9 @@
 #include <vector>
 #include <string>
 
-std::string CONFIG_PATH="../data/config.ini";
-std::string DATA_PATH="../data/"; 
+static std::string CONFIG_PATH="./data/config.ini";
+static std::string DATA_PATH="./data/"; 
+static std::string OUTPUT_PATH="./output/solution.txt";
 
 //Tool
 static std::vector<std::string> split(const std::string &s, const std::string &delimiters = ",") {
@@ -24,9 +25,10 @@ void readConf(){
     std::ifstream config;
     config.open(CONFIG_PATH);
     std::string tmp_line;
-    while(getline(config,tmp_line)){
-        //TODO
-    }
+    getline(config,tmp_line);
+    getline(config,tmp_line);
+    // TODO
+    config.close();
 }
 
 void readData(){
@@ -51,6 +53,8 @@ void readData(){
         //TODO
 
     }
+    data.close();
+    data.clear();
 }
 
 void Output(){
@@ -58,11 +62,10 @@ void Output(){
 
 }
 
+
+
 int main() {
-    readConf();
-
-    readData();
-
+    
 
 	return 0;
 }
